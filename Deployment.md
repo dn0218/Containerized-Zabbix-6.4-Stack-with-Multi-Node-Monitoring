@@ -62,6 +62,11 @@ Writing manifest to image destination
 af77b15dcc86603c5861fc8f28868cf71d9a671b8849376eea558239bfd18f04
 ```
 ## 📊 Verify Running Containers
+You should see:
+- zabbix-db
+- zabbix-server
+- zabbix-web
+- infra container (Pod)
 ```bash
 [danny@rhel web_project]$ podman ps --pod
 CONTAINER ID  IMAGE                                                       COMMAND               CREATED            STATUS            PORTS                                                                  NAMES               POD ID        PODNAME
@@ -71,10 +76,7 @@ a717d5c02e73  localhost/my-custom-nginx:v1                                nginx 
 d21ae15b5687  docker.io/zabbix/zabbix-server-mysql:alpine-6.4-latest      /usr/sbin/zabbix_...  5 minutes ago      Up 5 minutes      0.0.0.0:8080->8080/tcp, 0.0.0.0:10051->10051/tcp                       zabbix-server       c5e42a822897  zabbix-stack
 af77b15dcc86  docker.io/zabbix/zabbix-web-apache-mysql:alpine-6.4-latest                        2 minutes ago      Up 2 minutes      0.0.0.0:8080->8080/tcp, 0.0.0.0:10051->10051/tcp, 8443/tcp             zabbix-web          c5e42a822897  zabbix-stack
 ```
-You should see:
-- zabbix-db
-- zabbix-server
-- zabbix-web
-- infra container (Pod)
+Success setup in Zabbix
+<img width="1869" height="651" alt="Screenshot 2026-04-01 175211" src="https://github.com/user-attachments/assets/ee8c1d6c-0d62-4ea4-a4b7-a8eedfa65f7f" />
 
 
